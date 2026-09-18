@@ -153,22 +153,17 @@ pytest -v
 
 ---
 
-## 📊 Evaluation Criteria Summary
+## 🚀 Deployment Guide
 
-| Evaluation Criteria | Weight | Implementation Details in Darukaa.Earth |
-| :--- | :---: | :--- |
-| **Depth of Reasoning** | **30%** | Cross-evaluates $\ge 3$ interwoven variables (Soil, Climate, Land Use, Biodiversity). Avoids shallow LLM responses. |
-| **Scientific Grounding** | **25%** | RAG retrieval over FAO, IPCC, IPBES papers; detailed ecological mechanism explanations. |
-| **Knowledge System Design**| **20%** | Vector index (ChromaDB) with metadata citation tracing and structured fallback search. |
-| **Conversational Intelligence**| **15%** | Stateful multi-turn memory; proactive clarification prompt when metrics $< 3$. |
-| **Output Clarity** | **10%** | Strict Pydantic JSON/Markdown output formatting with quantitative estimates and timeframes. |
+### Option 1: Streamlit Community Cloud (Free 1-Click Deploy)
+1. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+2. Click **New App** and select repository: `kavitha308/-Darukaa.EarthAI`.
+3. Set **Main file path**: `app.py`.
+4. Click **Deploy!** Your app will be live on a public `.streamlit.app` URL.
 
----
-
-## 👥 Repository Access & Submission Info
-
-For evaluation access, please grant repository permissions to:
-- `ankita.dasgupta@darukaa.com`
-- `harsh.kumar@darukaa.com`
-- `utkarsh.gauniyal@darukaa.com`
-- `guneet.mutreja@darukaa.com`
+### Option 2: Docker Container Deployment (Render / Railway / Cloud Run)
+Build and run the container locally or on any cloud platform:
+```bash
+docker build -t darukaa-earth .
+docker run -p 8501:8501 darukaa-earth
+```
