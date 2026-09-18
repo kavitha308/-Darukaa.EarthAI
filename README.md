@@ -14,25 +14,25 @@
 
 ```mermaid
 graph TD
-    User([User / Environmental Scientist]) -->|Natural Language Text or Structured Metrics| Interface{Input Interface}
-    Interface -->|Streamlit Dashboard| WebApp[Streamlit Dashboard app.py]
-    Interface -->|REST API Request| API[FastAPI Backend src/api/main.py]
+    User(["User / Environmental Scientist"]) -->|Natural Language Text or Structured Metrics| Interface{Input Interface}
+    Interface -->|Streamlit Dashboard| WebApp["Streamlit Dashboard app.py"]
+    Interface -->|REST API Request| API["FastAPI Backend src/api/main.py"]
 
-    WebApp --> Engine[Multi-Variable Reasoning Engine src/engine/reasoning.py]
+    WebApp --> Engine["Multi-Variable Reasoning Engine src/engine/reasoning.py"]
     API --> Engine
 
-    Engine --> Memory[Conversation State Manager src/engine/memory.py]
-    Engine -->|Metric Count Check| Clarification{Metrics >= 3?}
+    Engine --> Memory["Conversation State Manager src/engine/memory.py"]
+    Engine -->|Metric Count Check| Clarification{"Metrics >= 3?"}
 
-    Clarification -->|No: Incomplete Input| ClarifyOut[ClarificationRequest: Ask Target Questions]
-    Clarification -->|Yes: Sufficient Context| RAG[RAG Retrieval Chain src/engine/rag_chain.py]
+    Clarification -->|No: Incomplete Input| ClarifyOut["ClarificationRequest: Ask Target Questions"]
+    Clarification -->|Yes: Sufficient Context| RAG["RAG Retrieval Chain src/engine/rag_chain.py"]
 
-    RAG --> VectorDB[(Vector Store ChromaDB / Fallback Search)]
-    VectorDB -->|Ingests| SeedDocs[data/raw_docs/ (FAO, IPCC, IPBES)]
-    VectorDB -->|Ingests| SeedJSON[data/seed_knowledge.json]
+    RAG --> VectorDB[("Vector Store ChromaDB / Fallback Search")]
+    VectorDB -->|Ingests| SeedDocs["data/raw_docs/ (FAO, IPCC, IPBES)"]
+    VectorDB -->|Ingests| SeedJSON["data/seed_knowledge.json"]
 
-    RAG -->|Retrieved Evidence Snippets| LLMReasoning[LangChain / Pydantic Structured Output LLM Engine]
-    LLMReasoning -->|Validated Schema| FinalOutput[StructuredRecommendation Output]
+    RAG -->|Retrieved Evidence Snippets| LLMReasoning["LangChain / Pydantic Structured Output LLM Engine"]
+    LLMReasoning -->|Validated Schema| FinalOutput["StructuredRecommendation Output"]
 
     ClarifyOut --> User
     FinalOutput --> User
