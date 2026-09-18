@@ -23,92 +23,126 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Premium Dark Glassmorphism & High-Contrast White Text Styling
+# Futuristic Dark Bio-Tech Aesthetics & High-Contrast Typography
 CUSTOM_CSS = """
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
     /* Global Theme Overrides */
     .stApp {
-        background-color: #090D16;
+        background: radial-gradient(circle at 50% 0%, #0D261E 0%, #071224 45%, #030712 100%) !important;
+        font-family: 'Outfit', 'Inter', sans-serif !important;
         color: #FFFFFF !important;
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
 
     /* Prevent Code/Pre blocks from rendering as white boxes */
     code, pre, div[data-testid="stCodeBlock"], .stCode, pre code {
-        background-color: #1E293B !important;
-        background: #1E293B !important;
-        color: #34D399 !important;
-        border: 1px solid #334155 !important;
-        border-radius: 8px !important;
+        background-color: #0F172A !important;
+        background: #0F172A !important;
+        color: #00FF9D !important;
+        border: 1px solid #1E293B !important;
+        border-radius: 10px !important;
         font-family: monospace !important;
     }
     
     code *, pre *, div[data-testid="stCodeBlock"] * {
         background-color: transparent !important;
-        color: #34D399 !important;
+        color: #00FF9D !important;
     }
     
     /* Ensure ALL Paragraphs, Headings, Subheaders, Labels, List Items, and Spans are Bright White */
     .stApp p, .stApp span, .stApp label, .stApp li, .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6, .stApp b, .stApp strong {
         color: #FFFFFF !important;
+        font-family: 'Outfit', sans-serif !important;
     }
 
     /* Form Input Labels */
     label, label[data-testid="stWidgetLabel"], label p, label span, .stSlider label, .stSelectbox label, .stTextInput label, .stNumberInput label {
-        color: #FFFFFF !important;
-        font-size: 1.02rem !important;
+        color: #38BDF8 !important;
+        font-size: 1.05rem !important;
         font-weight: 700 !important;
+        letter-spacing: 0.2px;
     }
 
     .stMarkdown p, .stMarkdown span, .stMarkdown div {
         color: #F8FAFC !important;
-        font-size: 1.02rem;
+        font-size: 1.05rem;
     }
 
     .stCaption, p[data-testid="stCaptionContainer"] {
-        color: #E2E8F0 !important;
+        color: #94A3B8 !important;
         font-size: 0.95rem;
     }
     
-    /* Header Card */
+    /* Header Card - Glassmorphism & Neon Accent */
     .main-header {
-        background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.2));
-        border: 1px solid rgba(16, 185, 129, 0.5);
-        border-radius: 16px;
-        padding: 24px;
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(6, 182, 212, 0.18) 50%, rgba(99, 102, 241, 0.15) 100%);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(16, 185, 129, 0.45);
+        border-radius: 20px;
+        padding: 28px 32px;
         margin-bottom: 24px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
     
     .main-title {
-        color: #34D399 !important;
-        font-size: 2.3rem;
-        font-weight: 800;
+        color: #00FF9D !important;
+        font-size: 2.6rem;
+        font-weight: 900;
         margin: 0;
         letter-spacing: -0.5px;
-        text-shadow: 0 2px 10px rgba(16, 185, 129, 0.4);
+        text-shadow: 0 2px 16px rgba(0, 255, 157, 0.4);
     }
     
     .subtitle {
         color: #E2E8F0 !important;
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         margin-top: 6px;
+        font-weight: 500;
+    }
+
+    /* Stat Banner Cards */
+    .stat-card {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid #10B981;
+        border-radius: 14px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        transition: transform 0.2s ease;
+    }
+    .stat-card:hover {
+        transform: translateY(-3px);
+        border-top-color: #00FF9D;
+    }
+    .stat-number {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #00FF9D !important;
+    }
+    .stat-label {
+        font-size: 0.85rem;
+        color: #94A3B8 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 4px;
     }
     
-    /* Buttons Styling - Crisp White Container with Dark Text, Emerald Hover */
+    /* Buttons Styling - Vibrant Neon Emerald & Glowing Hover */
     .stButton > button, 
     div.stButton > button,
     button[data-testid="baseButton-secondary"],
     button[data-baseweb="button"] {
-        background-color: #FFFFFF !important;
-        background: #FFFFFF !important;
-        color: #0F172A !important;
+        background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+        color: #FFFFFF !important;
         font-weight: 800 !important;
-        font-size: 0.95rem !important;
-        border: 2px solid #10B981 !important;
-        border-radius: 10px !important;
-        padding: 10px 22px !important;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+        font-size: 0.98rem !important;
+        border: 1px solid #34D399 !important;
+        border-radius: 12px !important;
+        padding: 12px 24px !important;
+        box-shadow: 0 4px 18px rgba(16, 185, 129, 0.45) !important;
         transition: all 0.25s ease-in-out !important;
         cursor: pointer !important;
     }
@@ -121,41 +155,32 @@ CUSTOM_CSS = """
     button[data-testid="baseButton-secondary"] span,
     button[data-baseweb="button"] p,
     button[data-baseweb="button"] span {
-        color: #0F172A !important;
+        color: #FFFFFF !important;
         font-weight: 800 !important;
-        font-size: 0.95rem !important;
+        font-size: 0.98rem !important;
     }
     
     .stButton > button:hover, 
     div.stButton > button:hover,
     button[data-testid="baseButton-secondary"]:hover {
-        background-color: #10B981 !important;
-        background: #10B981 !important;
+        background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
         color: #FFFFFF !important;
-        border-color: #059669 !important;
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6) !important;
+        border-color: #00FF9D !important;
+        box-shadow: 0 6px 24px rgba(0, 255, 157, 0.6) !important;
         transform: translateY(-2px);
-    }
-
-    .stButton > button:hover p,
-    .stButton > button:hover span,
-    div.stButton > button:hover p,
-    div.stButton > button:hover span,
-    button[data-testid="baseButton-secondary"]:hover p {
-        color: #FFFFFF !important;
     }
 
     /* Form Primary Submit Button */
     button[data-testid="stFormSubmitButton"],
     button[data-testid="baseButton-primary"] {
-        background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+        background: linear-gradient(135deg, #0284C7 0%, #10B981 100%) !important;
         background-color: #10B981 !important;
         color: #FFFFFF !important;
         font-weight: 800 !important;
-        border: 2px solid #34D399 !important;
-        border-radius: 10px !important;
-        padding: 10px 22px !important;
-        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4) !important;
+        border: 1px solid #38BDF8 !important;
+        border-radius: 12px !important;
+        padding: 12px 24px !important;
+        box-shadow: 0 4px 18px rgba(14, 165, 233, 0.45) !important;
     }
 
     button[data-testid="stFormSubmitButton"] p,
@@ -168,53 +193,56 @@ CUSTOM_CSS = """
     
     button[data-testid="stFormSubmitButton"]:hover,
     button[data-testid="baseButton-primary"]:hover {
-        background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-        background-color: #059669 !important;
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.7) !important;
+        background: linear-gradient(135deg, #0369A1 0%, #059669 100%) !important;
+        box-shadow: 0 6px 24px rgba(56, 189, 248, 0.6) !important;
     }
 
     /* Input Controls Text & Background */
     .stTextInput input, .stNumberInput input, div[data-baseweb="select"] {
-        background-color: #111827 !important;
+        background-color: #0F172A !important;
         color: #FFFFFF !important;
-        border: 1px solid #374151 !important;
-        border-radius: 8px !important;
+        border: 1px solid #334155 !important;
+        border-radius: 10px !important;
+        font-size: 1rem !important;
     }
 
     .stTextInput input:focus, .stNumberInput input:focus {
-        border-color: #10B981 !important;
-        box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3) !important;
+        border-color: #00FF9D !important;
+        box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.3) !important;
     }
 
     /* Badges */
     .badge {
         display: inline-block;
-        background: rgba(16, 185, 129, 0.3);
-        color: #34D399 !important;
-        border: 1px solid rgba(52, 211, 153, 0.6);
-        padding: 5px 14px;
+        background: rgba(16, 185, 129, 0.25);
+        color: #00FF9D !important;
+        border: 1px solid rgba(0, 255, 157, 0.5);
+        padding: 6px 16px;
         border-radius: 20px;
-        font-size: 0.88rem;
+        font-size: 0.9rem;
         font-weight: 700;
         margin-right: 8px;
+        box-shadow: 0 2px 10px rgba(0, 255, 157, 0.2);
     }
     
     .badge-cyan {
-        background: rgba(6, 182, 212, 0.3);
+        background: rgba(6, 182, 212, 0.25);
         color: #38BDF8 !important;
-        border: 1px solid rgba(56, 189, 248, 0.6);
+        border: 1px solid rgba(56, 189, 248, 0.5);
+        box-shadow: 0 2px 10px rgba(56, 189, 248, 0.2);
     }
 
     /* Recommendation Card Styling */
     .rec-card {
-        background: #0F172A !important;
-        border: 1px solid #1E293B !important;
-        border-left: 6px solid #10B981 !important;
-        border-radius: 14px !important;
-        padding: 24px !important;
-        margin-top: 16px !important;
-        margin-bottom: 20px !important;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+        background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(6, 44, 34, 0.9)) !important;
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(16, 185, 129, 0.4) !important;
+        border-left: 6px solid #00FF9D !important;
+        border-radius: 16px !important;
+        padding: 28px !important;
+        margin-top: 20px !important;
+        margin-bottom: 24px !important;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
     }
 
     .rec-card p, .rec-card span, .rec-card b, .rec-card li, .rec-card div {
@@ -222,29 +250,31 @@ CUSTOM_CSS = """
     }
 
     .rec-card h2 {
-        color: #34D399 !important;
-        font-size: 1.6rem !important;
-        font-weight: 800 !important;
-        margin-bottom: 12px !important;
+        color: #00FF9D !important;
+        font-size: 1.7rem !important;
+        font-weight: 900 !important;
+        margin-bottom: 14px !important;
+        text-shadow: 0 2px 12px rgba(0, 255, 157, 0.3);
     }
 
     .rec-card h4 {
         color: #38BDF8 !important;
-        font-size: 1.2rem !important;
-        font-weight: 700 !important;
-        margin-top: 18px !important;
-        margin-bottom: 8px !important;
+        font-size: 1.25rem !important;
+        font-weight: 800 !important;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
     }
     
     .clarification-card {
-        background: #1E1B4B !important;
-        border: 1px solid #3730A3 !important;
+        background: linear-gradient(145deg, rgba(30, 27, 75, 0.95), rgba(15, 23, 42, 0.9)) !important;
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(129, 140, 248, 0.4) !important;
         border-left: 6px solid #818CF8 !important;
-        border-radius: 14px !important;
-        padding: 24px !important;
-        margin-top: 16px !important;
-        margin-bottom: 20px !important;
-        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3) !important;
+        border-radius: 16px !important;
+        padding: 28px !important;
+        margin-top: 20px !important;
+        margin-bottom: 24px !important;
+        box-shadow: 0 12px 32px rgba(99, 102, 241, 0.3) !important;
     }
 
     .clarification-card p, .clarification-card span, .clarification-card b, .clarification-card li, .clarification-card div {
@@ -253,30 +283,32 @@ CUSTOM_CSS = """
 
     .clarification-card h3 {
         color: #A5B4FC !important;
-        font-size: 1.45rem !important;
-        font-weight: 800 !important;
-        margin-bottom: 12px !important;
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        margin-bottom: 14px !important;
     }
     
     .metric-chip {
-        background: #1F2937 !important;
+        background: #0F172A !important;
         color: #FFFFFF !important;
-        padding: 6px 14px;
-        border-radius: 8px;
-        font-size: 0.9rem;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-size: 0.92rem;
         margin-right: 8px;
         margin-bottom: 8px;
         display: inline-block;
-        border: 1px solid #374151;
+        border: 1px solid #334155;
     }
 
-    /* Chat Messages Styling - Deep Slate Container with Bright White Text */
+    /* Chat Messages Styling - Deep Slate Glass Container */
     div[data-testid="stChatMessage"] {
-        background-color: #1E293B !important;
-        border: 1px solid #334155 !important;
-        border-radius: 12px !important;
-        margin-bottom: 12px !important;
-        padding: 14px 18px !important;
+        background: rgba(15, 23, 42, 0.85) !important;
+        backdrop-filter: blur(12px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 14px !important;
+        margin-bottom: 14px !important;
+        padding: 16px 20px !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
     }
 
     div[data-testid="stChatMessage"] p,
@@ -289,30 +321,30 @@ CUSTOM_CSS = """
     div[data-testid="stChatMessage"] li {
         color: #FFFFFF !important;
         font-size: 1.05rem !important;
-        line-height: 1.6 !important;
+        line-height: 1.65 !important;
     }
     
     /* Tab Styling */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 12px;
+        gap: 14px;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background-color: #111827;
-        border-radius: 10px;
-        color: #E2E8F0 !important;
-        padding: 10px 22px;
-        border: 1px solid #1F2937;
-        font-weight: 600;
-        transition: all 0.2s ease;
+        background-color: rgba(15, 23, 42, 0.8);
+        border-radius: 12px;
+        color: #CBD5E1 !important;
+        padding: 12px 24px;
+        border: 1px solid #1E293B;
+        font-weight: 700;
+        transition: all 0.25s ease;
     }
     
     .stTabs [aria-selected="true"] {
-        background-color: #10B981 !important;
+        background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
         color: #FFFFFF !important;
-        font-weight: bold;
-        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
-        border: 1px solid #34D399 !important;
+        font-weight: 800;
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+        border: 1px solid #00FF9D !important;
     }
 </style>
 """
@@ -328,30 +360,30 @@ def render_evaluation_response(res):
         <div class="clarification-card">
         <h3>❓ Proactive Scientific Clarification Required</h3>
         <p>{res.clarifying_question}</p>
-        <div style="margin-top:14px; background:rgba(0,0,0,0.3); padding:14px; border-radius:8px;">
-        <b style="color:#A5B4FC !important;">Detected Metrics So Far:</b> <span style="color:#FFFFFF !important;">{json.dumps(res.current_detected_metrics)}</span><br>
-        <b style="color:#FCA5A5 !important;">Missing Key Variables:</b> <span style="color:#FFFFFF !important;">{', '.join(res.missing_metrics)}</span>
+        <div style="margin-top:16px; background:rgba(0,0,0,0.35); padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.1);">
+        <b style="color:#A5B4FC !important; font-size:1.05rem;">Detected Metrics So Far:</b> <span style="color:#FFFFFF !important; font-size:1.05rem;">{json.dumps(res.current_detected_metrics)}</span><br><br>
+        <b style="color:#FCA5A5 !important; font-size:1.05rem;">Missing Key Variables:</b> <span style="color:#FFFFFF !important; font-size:1.05rem;">{', '.join(res.missing_metrics)}</span>
         </div>
         </div>
         """).strip()
         st.markdown(card_html, unsafe_allow_html=True)
         
     elif isinstance(res, StructuredRecommendation):
-        vars_html = ' • '.join([f"<code style='color:#34D399 !important; background:#065F46 !important; padding:4px 10px; border-radius:6px; font-weight:700;'>{v}</code>" for v in res.interwoven_variables_evaluated])
+        vars_html = ' • '.join([f"<code style='color:#00FF9D !important; background:rgba(0, 255, 157, 0.15) !important; border:1px solid rgba(0, 255, 157, 0.4); padding:6px 12px; border-radius:8px; font-weight:700;'>{v}</code>" for v in res.interwoven_variables_evaluated])
         
         card_html = textwrap.dedent(f"""
         <div class="rec-card">
         <h2>🎯 Recommendation: {res.actionable_recommendation}</h2>
-        <p style="margin-bottom:16px;"><b style="color:#F9FAFB !important;">Time Horizon:</b> <span class="badge">{res.time_horizon}</span> | <b style="color:#F9FAFB !important;">Confidence:</b> <span class="badge badge-cyan">{res.confidence_level*100:.0f}%</span></p>
+        <p style="margin-bottom:18px;"><b style="color:#F9FAFB !important; font-size:1.05rem;">Time Horizon:</b> <span class="badge">{res.time_horizon}</span> | <b style="color:#F9FAFB !important; font-size:1.05rem;">Confidence:</b> <span class="badge badge-cyan">{res.confidence_level*100:.0f}%</span></p>
         <h4>🔬 Scientific Mechanism & Reasoning:</h4>
-        <p style="color:#FFFFFF !important; font-size:1.05rem; line-height:1.6;">{res.scientific_reasoning}</p>
+        <p style="color:#FFFFFF !important; font-size:1.08rem; line-height:1.7;">{res.scientific_reasoning}</p>
         <h4>🕸️ Interwoven Variables Cross-Evaluated:</h4>
-        <p style="color:#FFFFFF !important;">{vars_html}</p>
+        <p style="color:#FFFFFF !important; margin-top:10px;">{vars_html}</p>
         </div>
         """).strip()
         st.markdown(card_html, unsafe_allow_html=True)
         
-        st.markdown("<h3 style='color:#FFFFFF !important; margin-top:20px; font-size:1.3rem; font-weight:800;'>📈 Quantitative Impact Estimates</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color:#00FF9D !important; margin-top:24px; font-size:1.4rem; font-weight:800;'>📈 Quantitative Impact Estimates</h3>", unsafe_allow_html=True)
         cols = st.columns(len(res.quantitative_estimates))
         for i, est in enumerate(res.quantitative_estimates):
             with cols[i]:
@@ -361,7 +393,7 @@ def render_evaluation_response(res):
                     delta=f"Baseline: {est.baseline_value} ({est.timeframe})"
                 )
 
-        st.markdown("<h3 style='color:#FFFFFF !important; margin-top:24px; font-size:1.3rem; font-weight:800;'>📖 Credible Scientific References & Citations</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color:#00FF9D !important; margin-top:28px; font-size:1.4rem; font-weight:800;'>📖 Credible Scientific References & Citations</h3>", unsafe_allow_html=True)
         for cit in res.citations:
             with st.expander(f"📌 {cit.citation_source} - {cit.study_title_or_report}"):
                 st.write(f"**Ecological Mechanism**: {cit.ecological_mechanism}")
@@ -387,6 +419,39 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+# Hero Stat Cards Banner
+stat1, stat2, stat3, stat4 = st.columns(4)
+with stat1:
+    st.markdown(f"""
+    <div class="stat-card">
+        <div class="stat-number">{len(vector_store.documents)}</div>
+        <div class="stat-label">Scientific Knowledge Chunks</div>
+    </div>
+    """, unsafe_allow_html=True)
+with stat2:
+    st.markdown("""
+    <div class="stat-card">
+        <div class="stat-number">3+ Var</div>
+        <div class="stat-label">Interwoven Variable Analysis</div>
+    </div>
+    """, unsafe_allow_html=True)
+with stat3:
+    st.markdown("""
+    <div class="stat-card">
+        <div class="stat-number">FAO / IPCC</div>
+        <div class="stat-label">Evidence Grounding</div>
+    </div>
+    """, unsafe_allow_html=True)
+with stat4:
+    st.markdown("""
+    <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Actionable & Quantitative</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("<div style='height: 20px;'></div>", unsafe_allow_html=True)
 
 # Sidebar System Specs
 with st.sidebar:
