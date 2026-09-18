@@ -1,0 +1,27 @@
+# Python virtual environments & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables & local secrets
+.env
+
+# Vector database persistence directory
+data/chroma_db/
+
+# Pytest & Cache
+.pytest_cache/
+.chroma/
+
+# Streamlit local config overrides
+.streamlit/secrets.toml
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

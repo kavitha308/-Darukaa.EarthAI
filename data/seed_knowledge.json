@@ -1,0 +1,184 @@
+{
+  "system_info": "Darukaa.Earth Seeded Ecological Knowledge Base",
+  "version": "1.0",
+  "domain_categories": [
+    "Soil Health",
+    "Land Cover / Use",
+    "Biodiversity Indicators",
+    "Climate Factors",
+    "Human Impact"
+  ],
+  "interventions": [
+    {
+      "id": "INT-001",
+      "name": "Agroforestry Intercropping with Nitrogen-Fixing Legumes",
+      "target_conditions": {
+        "crop_system": "monoculture",
+        "soil_organic_carbon_pct_max": 1.0,
+        "rainfall": ["low", "moderate", "semi-arid"]
+      },
+      "interwoven_variables": [
+        "Soil Organic Carbon (Soil Health)",
+        "Rainfall / Water Retention (Climate)",
+        "Monoculture Cover (Land Use)",
+        "Microbial & Pollinator Index (Biodiversity)"
+      ],
+      "ecological_mechanism": "Incorporating nitrogen-fixing leguminous trees (e.g., Acacia, Gliricidia) and cover crops into monoculture cereals enhances atmospheric nitrogen fixation (rhizobial symbioses), increases litter turnover, improves soil organic matter pool, shades soil to lower microclimate evapotranspiration, and restores mycorrhizal fungi networks.",
+      "quantitative_impacts": [
+        {
+          "metric": "Soil Organic Carbon",
+          "baseline": "0.3% - 0.8%",
+          "expected_change": "+15-25%",
+          "timeframe_years": "2-3 years"
+        },
+        {
+          "metric": "Pollinator Abundance & Diversity",
+          "baseline": "Low monoculture index",
+          "expected_change": "+35-50%",
+          "timeframe_years": "1-2 years"
+        },
+        {
+          "metric": "Soil Water Infiltration Rate",
+          "baseline": "< 15 mm/hr",
+          "expected_change": "+40-60%",
+          "timeframe_years": "2 years"
+        }
+      ],
+      "time_horizon": "Medium Term (2-3 years)",
+      "confidence_level": "Very High (0.92)",
+      "sources": [
+        "FAO (2020) State of the World's Forests: Forests, Biodiversity and People",
+        "IPCC (2019) Special Report on Climate Change and Land (SRCCL), Chapter 4: Land Degradation",
+        "Jose, S. (2009) Agroforestry for ecosystem services. Agroforestry Systems, 76(1), 1-10."
+      ]
+    },
+    {
+      "id": "INT-002",
+      "name": "Biochar Soil Amendment with Micro-Dose Organic Compost",
+      "target_conditions": {
+        "soil_ph_min": 4.5,
+        "soil_ph_max": 6.0,
+        "soil_organic_carbon_pct_max": 0.8,
+        "aridity_index": "high"
+      },
+      "interwoven_variables": [
+        "Soil pH & Cation Exchange (Soil Health)",
+        "Soil Organic Carbon (Soil Health)",
+        "Aridity & Soil Moisture Deficit (Climate)",
+        "Soil Microbial Biomass (Biodiversity)"
+      ],
+      "ecological_mechanism": "Pyrolyzed biomass (biochar) creates a highly porous recalcitrant carbon skeleton that buffers acidic soil pH, boosts cation exchange capacity (CEC), sequesters persistent recalcitrant carbon for decades, and retains soil moisture during dry spells, preventing nutrient leaching.",
+      "quantitative_impacts": [
+        {
+          "metric": "Soil Organic Carbon",
+          "baseline": "0.4%",
+          "expected_change": "+30-45%",
+          "timeframe_years": "1-2 years"
+        },
+        {
+          "metric": "Water Holding Capacity",
+          "baseline": "Low",
+          "expected_change": "+20-30%",
+          "timeframe_years": "1 year"
+        },
+        {
+          "metric": "Microbial Biomass Carbon",
+          "baseline": "Depleted",
+          "expected_change": "+25-40%",
+          "timeframe_years": "1-3 years"
+        }
+      ],
+      "time_horizon": "Short to Medium Term (1-2 years)",
+      "confidence_level": "High (0.88)",
+      "sources": [
+        "IPCC (2022) AR6 Working Group III: Mitigation of Climate Change, Chapter 12: CDR Technologies",
+        "Lehmann, J. et al. (2015) Biochar for Environmental Management: Science, Technology and Implementation."
+      ]
+    },
+    {
+      "id": "INT-003",
+      "name": "Biodiverse Hedgerow Buffers & Riparian Conservation Corridors",
+      "target_conditions": {
+        "habitat_fragmentation": "high",
+        "pesticide_load": "moderate_to_high",
+        "monoculture_pct_min": 60
+      },
+      "interwoven_variables": [
+        "Habitat Fragmentation (Land Use)",
+        "Pesticide Load & Ecotoxicity (Human Impact)",
+        "Species Richness & Native Pollinators (Biodiversity)",
+        "Runoff Nutrient Retention (Soil & Hydrology)"
+      ],
+      "ecological_mechanism": "Establishing multi-layered native woody hedgerows and riparian vegetated buffer strips traps agricultural chemical runoff before entering aquatic ecosystems, breaks up large monoculture patches into connected ecological corridors, provides nesting micro-habitats for native bees and predatory insects (natural biological control agents), and mitigates edge effects.",
+      "quantitative_impacts": [
+        {
+          "metric": "Native Bird & Beneficial Insect Richness",
+          "baseline": "Fragmented low diversity",
+          "expected_change": "+45-70%",
+          "timeframe_years": "2-4 years"
+        },
+        {
+          "metric": "Pesticide Sediment Runoff Filtration",
+          "baseline": "Unbuffered field edges",
+          "expected_change": "-50-75%",
+          "timeframe_years": "1 year"
+        },
+        {
+          "metric": "Natural Pest Suppression",
+          "baseline": "Dependent on synthetic chemicals",
+          "expected_change": "+30-40%",
+          "timeframe_years": "2-3 years"
+        }
+      ],
+      "time_horizon": "Medium to Long Term (2-4 years)",
+      "confidence_level": "Very High (0.94)",
+      "sources": [
+        "IPBES (2019) Global Assessment Report on Biodiversity and Ecosystem Services",
+        "FAO & ITPS (2020) State of Knowledge of Soil Biodiversity: Status, Challenges and Potential",
+        "Benton, T. G. et al. (2003) Farmland biodiversity: is habitat heterogeneity the key? Trends in Ecology & Evolution."
+      ]
+    },
+    {
+      "id": "INT-004",
+      "name": "Regenerative Conservation Tillage & Multispecies Cover Cropping",
+      "target_conditions": {
+        "tillage": "intensive",
+        "soil_moisture": "low",
+        "erosion_risk": "high"
+      },
+      "interwoven_variables": [
+        "Soil Compaction & Erosion (Soil Health)",
+        "Soil Moisture & Drought Vulnerability (Climate)",
+        "Native Soil Macrofauna / Earthworms (Biodiversity)",
+        "Fuel & Mechanical Disturbance (Human Impact)"
+      ],
+      "ecological_mechanism": "Transitioning from heavy inversion plowing to zero-till or strip-till combined with 8-12 species cover crop cocktails prevents soil crusting, creates biopores through deep taproots, insulates soil skin against solar radiation, stimulates earthworm (Lumbricidae) populations, and drastically reduces carbon oxidation.",
+      "quantitative_impacts": [
+        {
+          "metric": "Topsoil Erosion Reduction",
+          "baseline": "Severe degradation",
+          "expected_change": "-70-90%",
+          "timeframe_years": "1 year"
+        },
+        {
+          "metric": "Earthworm Population Density",
+          "baseline": "< 20 individuals/m²",
+          "expected_change": "+200-400%",
+          "timeframe_years": "3 years"
+        },
+        {
+          "metric": "Soil Carbon Sequestration",
+          "baseline": "Degraded farmland",
+          "expected_change": "+0.5 to +1.2 t C/ha/yr",
+          "timeframe_years": "3-5 years"
+        }
+      ],
+      "time_horizon": "Long Term (3-5 years)",
+      "confidence_level": "High (0.91)",
+      "sources": [
+        "FAO (2021) Soil Organic Carbon Mapping & Conservation Agriculture Technical Guide",
+        "Lal, R. (2004) Soil carbon sequestration impacts on global climate change and food security. Science, 304(5677), 1623-1627."
+      ]
+    }
+  ]
+}
