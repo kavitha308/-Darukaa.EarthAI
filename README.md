@@ -153,17 +153,4 @@ pytest -v
 
 ---
 
-## 🚀 Deployment Guide
 
-### Option 1: Streamlit Community Cloud (Free 1-Click Deploy)
-1. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
-2. Click **New App** and select repository: `kavitha308/-Darukaa.EarthAI`.
-3. Set **Main file path**: `app.py`.
-4. Click **Deploy!** Your app will be live on a public `.streamlit.app` URL.
-
-### Option 2: Docker Container Deployment (Render / Railway / Cloud Run)
-Build and run the container locally or on any cloud platform:
-```bash
-docker build -t darukaa-earth .
-docker run -p 8501:8501 darukaa-earth
-```
